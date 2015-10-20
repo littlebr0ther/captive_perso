@@ -7,12 +7,12 @@ var userInput = [
 
 //array of keywords
 var keyWords;
-keyWords = [
+/*keyWords = [
     "age",
     "train",
     "goat",
     "nom"
-    ]
+    ]*/
 var i;
 var e;
 
@@ -20,26 +20,27 @@ var e;
 var key;
 
 //create the array of keywords from file.txt
-/*function createArray() {
-                $.get("file.txt", function(data) {
-                    keyWords = data.split(',');
-                    alert(keyWords);
-                }); 
-            }*/
+function createArray() {
+    $.get("file.txt", function (data) {
+        keyWords = data.split(',');
+        alert(keyWords);
+    });
+}
 
 //call contain() for each keyword
 function words() {
-       for (e = 0; e < keyWords.length; e++) {
+    for (e = 0; e < keyWords.length; e += 1) {
         contain(keyWords[e]);
-       }
-    return "- "+key;
+    }
+    return "- " + key;
 }
 
 //look for a keyword in the user input array
 function contain(x) {
-    for (i = 0; i < userInput.length; i++) {
-        if (userInput[i] === x ) {
-            return key = userInput[i];
+    for (i = 0; i < userInput.length; i += 1) {
+        if (userInput[i] === x) {
+            key = userInput[i];
+            return key;
         }
     }
 }
